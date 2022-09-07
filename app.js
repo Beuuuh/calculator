@@ -1,12 +1,18 @@
-const BUTTONS = [
-    firstRow = document.querySelector(".frstrow"),
-    secondRow = document.querySelector(".scndrow"),
-    thirdRow = document.querySelector(".thrdrow"),
-    fourthRow = document.querySelector(".frthrow"),
-    fifthRow = document.querySelector(".fithrow")
-];
-
 let label = document.querySelector(".label");
+let firstInput = "";
+let operatorInput = "";
+let secondInput = "";
+
+const numbers = [];
+numbers.push(document.querySelectorAll([".number"]));
+
+numbers.forEach((e) => {
+    addEventListener('click', () => {labelChanger(e.innerText)});
+});
+
+function labelChanger(numberButton) {
+    label.textContent += numberButton;
+};
 
 function add(firstNumber, SecondNumber) {
     return firstNumber + SecondNumber;
