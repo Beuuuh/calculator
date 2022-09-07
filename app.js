@@ -7,3 +7,19 @@ const BUTTONS = [
 ];
 
 let label = document.querySelector(".label");
+
+function add(firstNumber, SecondNumber) {
+    return firstNumber + SecondNumber;
+};
+
+function subtracion(firstNumber, SecondNumber) { 
+    return firstNumber - SecondNumber;
+};
+
+function multiply(firstNumber, SecondNumber) {
+    return firstNumber * SecondNumber;
+};
+
+function divide(firstNumber, SecondNumber) {
+    return firstNumber / SecondNumber
+};
