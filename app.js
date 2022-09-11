@@ -12,12 +12,12 @@ const numbers = [];
 numbers.push(document.querySelectorAll([".number"]));
 operators.push(document.querySelectorAll([".operator"]));
 
-operators.forEach((e) => {
-    addEventListener('click', () => {labelChanger(e.innerText)});
+operators[0].forEach((e) => {
+    e.addEventListener('click', () => {labelChanger(e.innerText)});
 });
 
-numbers.forEach((e) => {
-    addEventListener('click', () => {labelChanger(e.innerText)});
+numbers[0].forEach((e) => {
+    e.addEventListener('click', () => {labelChanger(e.innerText)});
 });
 
 function labelChanger(Button) {
