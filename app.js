@@ -1,11 +1,13 @@
 let label = document.querySelector(".label");
 let firstInput = "";
-let operatorInput = "";
+let operatorInput = undefined;
 let secondInput = "";
 
 const del = document.querySelector("#delete");
 const dot = document.querySelector("#dot");
 const cleanScreen = document.querySelector("#cleanScreen");
+const firstOperand = document.querySelector("#firstOperand");
+const lastOperand = document.querySelector("#lastOperand");
 const operators = [];
 const numbers = [];
 
