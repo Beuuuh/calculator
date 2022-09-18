@@ -23,7 +23,12 @@ numbers[0].forEach((e) => {
 });
 
 function labelChanger(Button) {
-    label.textContent += Button;
+    firstOperand.textContent += Button;
+    firstInput = parseInt(firstOperand.innerText);
+    if(operatorInput != undefined) {
+        lastOperand.textContent += Button;
+        secondInput = parseInt(lastOperand.innerText);
+    };
 };
 
 function add(firstNumber, SecondNumber) {
