@@ -15,7 +15,18 @@ numbers.push(document.querySelectorAll([".number"]));
 operators.push(document.querySelectorAll([".operator"]));
 
 operators[0].forEach((e) => {
-    e.addEventListener('click', () => {labelChanger(e.innerText)});
+    e.addEventListener('click', () => {
+        labelChanger(e.innerText)
+        if(e.innerText == "+") {
+            operatorInput = "add";
+        } else if(e.innerText == "-") {
+            operatorInput = "subtraction";
+        } else if(e.innerText == "*") {
+            operatorInput = "multiply";
+        } else if(e.innerText == "/") {
+            operatorInput = "divide";
+        }
+    });
 });
 
 numbers[0].forEach((e) => {
