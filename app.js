@@ -35,6 +35,7 @@ numbers[0].forEach((e) => {
 });
 
 equals.addEventListener("click", () => {equalsTo()});
+cleanScreen.addEventListener("click", () => {clear()});
 
 function labelChanger(Button) {
     firstOperand.textContent += Button;
@@ -58,17 +59,25 @@ function equalsTo() {
 };
 
 function add(firstNumber, SecondNumber) {
-    return label.innerText = firstNumber + SecondNumber;
+    return firstOperand.innerText = firstNumber + SecondNumber;
 };
 
 function subtraction(firstNumber, SecondNumber) {
-    return label.innerText = firstNumber - SecondNumber;
+    return firstOperand.innerText = firstNumber - SecondNumber;
 };
 
 function multiply(firstNumber, SecondNumber) {
-    return label.innerText = firstNumber * SecondNumber;
+    return firstOperand.innerText = firstNumber * SecondNumber;
 };
 
 function divide(firstNumber, SecondNumber) {
-    return label.innerText = firstNumber / SecondNumber;
+    return firstOperand.innerText = firstNumber / SecondNumber;
+};
+
+function clear() {
+    firstInput = "";
+    firstOperand.innerText = "";
+    secondInput = "";
+    lastOperand.innerText = "";
+    operatorInput = undefined;
 };
