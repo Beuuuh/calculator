@@ -5,6 +5,7 @@ let secondInput = "";
 
 const del = document.querySelector("#delete");
 const dot = document.querySelector("#dot");
+const equals = document.querySelector("#equals");
 const cleanScreen = document.querySelector("#cleanScreen");
 const firstOperand = document.querySelector("#firstOperand");
 const lastOperand = document.querySelector("#lastOperand");
@@ -33,6 +34,8 @@ numbers[0].forEach((e) => {
     e.addEventListener('click', () => {labelChanger(e.innerText)});
 });
 
+equals.addEventListener("click", () => {equalsTo()});
+
 function labelChanger(Button) {
     firstOperand.textContent += Button;
     firstInput = parseInt(firstOperand.innerText);
@@ -42,18 +45,30 @@ function labelChanger(Button) {
     };
 };
 
-function add(firstNumber, SecondNumber) {
-    return firstNumber + SecondNumber;
+function equalsTo() {
+    if(operatorInput == "add") {
+        add(firstInput, secondInput);
+    } else if(operatorInput == "subtraction") {
+        subtraction(firstInput, secondInput);
+    } else if(operatorInput == "multiply") {
+        multiply(firstInput, secondInput);
+    } else if(operatorInput == "divide") {
+        divide(firstInput, secondInput);
+    }
 };
 
-function subtracion(firstNumber, SecondNumber) { 
-    return firstNumber - SecondNumber;
+function add(firstNumber, SecondNumber) {
+    return label.innerText = firstNumber + SecondNumber;
+};
+
+function subtraction(firstNumber, SecondNumber) {
+    return label.innerText = firstNumber - SecondNumber;
 };
 
 function multiply(firstNumber, SecondNumber) {
-    return firstNumber * SecondNumber;
+    return label.innerText = firstNumber * SecondNumber;
 };
 
 function divide(firstNumber, SecondNumber) {
-    return firstNumber / SecondNumber
+    return label.innerText = firstNumber / SecondNumber;
 };
