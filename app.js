@@ -26,7 +26,11 @@ operators[0].forEach((e) => {
             operatorInput = "multiply";
         } else if(e.innerText == "/") {
             operatorInput = "divide";
-        }
+        } else if(e.innerText == "SQRT") {
+            operatorInput = "sqrt";
+        } else if(e.innerText == "^") {
+            operatorInput = "power";
+        };
     });
 });
 
@@ -55,7 +59,11 @@ function equalsTo() {
         multiply(firstInput, secondInput);
     } else if(operatorInput == "divide") {
         divide(firstInput, secondInput);
-    }
+    } else if(operatorInput == "sqrt") {
+        squareRoot(firstInput);
+    } else if(operatorInput == "power") {
+        power(firstInput,secondInput);
+    };
 };
 
 function add(firstNumber, SecondNumber) {
@@ -72,6 +80,14 @@ function multiply(firstNumber, SecondNumber) {
 
 function divide(firstNumber, SecondNumber) {
     return firstOperand.innerText = firstNumber / SecondNumber;
+};
+
+function squareRoot(firstNumber) {
+    return Math.sqrt(firstNumber);
+};
+
+function power(firstNumber, SecondNumber) {
+    return firstOperand.innerText = firstNumber ** SecondNumber;
 };
 
 function clear() {
