@@ -67,26 +67,38 @@ function equalsTo() {
 };
 
 function add(firstNumber, SecondNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return firstOperand.innerText = firstNumber + SecondNumber;
 };
 
 function subtraction(firstNumber, SecondNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return firstOperand.innerText = firstNumber - SecondNumber;
 };
 
 function multiply(firstNumber, SecondNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return firstOperand.innerText = firstNumber * SecondNumber;
 };
 
 function divide(firstNumber, SecondNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return firstOperand.innerText = firstNumber / SecondNumber;
 };
 
 function squareRoot(firstNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return Math.sqrt(firstNumber);
 };
 
 function power(firstNumber, SecondNumber) {
+    lastOperand.innerText = "";
+    operatorInput = undefined;
     return firstOperand.innerText = firstNumber ** SecondNumber;
 };
 
