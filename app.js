@@ -93,7 +93,7 @@ function divide(firstNumber, SecondNumber) {
 function squareRoot(firstNumber) {
     lastOperand.innerText = "";
     operatorInput = undefined;
-    return Math.sqrt(firstNumber);
+    return firstOperand.innerText = Math.sqrt(firstNumber);
 };
 
 function power(firstNumber, SecondNumber) {
