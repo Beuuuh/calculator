@@ -40,13 +40,14 @@ numbers[0].forEach((e) => {
 
 equals.addEventListener("click", () => {equalsTo()});
 cleanScreen.addEventListener("click", () => {clear()});
+dot.addEventListener("click", () => {labelChanger(".")});
 
 function labelChanger(Button) {
     firstOperand.textContent += Button;
-    firstInput = parseInt(firstOperand.innerText);
+    firstInput = parseFloat(firstOperand.innerText);
     if(operatorInput != undefined) {
         lastOperand.textContent += Button;
-        secondInput = parseInt(lastOperand.innerText);
+        secondInput = parseFloat(lastOperand.innerText);
     };
 };
 
