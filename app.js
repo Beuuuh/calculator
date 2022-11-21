@@ -17,15 +17,20 @@ operators.push(document.querySelectorAll([".operator"]));
 
 operators[0].forEach((e) => {
     e.addEventListener('click', () => {
-        labelChanger(e.innerText)
-        if(e.innerText == "+") {
-            operatorInput = "add";
-        } else if(e.innerText == "-") {
-            operatorInput = "subtraction";
-        } else if(e.innerText == "*") {
-            operatorInput = "multiply";
-        } else if(e.innerText == "/") {
-            operatorInput = "divide";
+        labelChanger(e.innerText);
+        switch(e.innerText) {
+            case "+":
+                operatorInput = "add";
+                break;
+            case "-":
+                operatorInput = "subtraction";
+                break;
+            case "*":
+                operatorInput = "multiply";
+                break;
+            case "/":
+                operatorInput = "divide";
+                break;
         };
     });
 });
@@ -48,14 +53,19 @@ function labelChanger(Button) {
 };
 
 function equalsTo() {
-    if(operatorInput == "add") {
-        add(firstInput, secondInput);
-    } else if(operatorInput == "subtraction") {
-        subtraction(firstInput, secondInput);
-    } else if(operatorInput == "multiply") {
-        multiply(firstInput, secondInput);
-    } else if(operatorInput == "divide") {
-        divide(firstInput, secondInput);
+    switch(operatorInput) {
+        case "add":
+            add(firstInput, secondInput);
+            break;
+        case "subtraction":
+            subtraction(firstInput, secondInput);
+            break;
+        case "multiply":
+            multiply(firstInput, secondInput);
+            break;
+        case "divide":
+            divide(firstInput, secondInput);
+            break;
     };
 };
 
