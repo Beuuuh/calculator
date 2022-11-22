@@ -42,6 +42,7 @@ numbers[0].forEach((e) => {
 equals.addEventListener("click", () => {equalsTo()});
 cleanScreen.addEventListener("click", () => {clear()});
 dot.addEventListener("click", () => {labelChanger(".")});
+del.addEventListener("click", () => {deleteNumber()});
 
 function labelChanger(Button) {
     firstOperand.textContent += Button;
@@ -99,4 +100,8 @@ function clear() {
     secondInput = "";
     lastOperand.innerText = "";
     operatorInput = undefined;
+};
+
+function deleteNumber() {
+    firstOperand.textContent = firstOperand.textContent.toString().slice(0,-1);
 };
