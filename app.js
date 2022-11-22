@@ -45,10 +45,11 @@ dot.addEventListener("click", () => {labelChanger(".")});
 del.addEventListener("click", () => {deleteNumber()});
 
 function labelChanger(Button) {
-    firstOperand.textContent += Button;
+    if(firstOperand.innerText == 0) resetScreen();
+    firstOperand.innerText += Button;
     firstInput = parseFloat(firstOperand.innerText);
     if(operatorInput != undefined) {
-        lastOperand.textContent += Button;
+        lastOperand.innerText += Button;
         secondInput = parseFloat(lastOperand.innerText);
     };
 };
@@ -99,9 +100,13 @@ function divide(firstNumber, SecondNumber) {
     };
 };
 
+function resetScreen() {
+    firstOperand.innerText = "";
+};
+
 function clear() {
     firstInput = "";
-    firstOperand.innerText = "";
+    firstOperand.innerText = "0";
     secondInput = "";
     lastOperand.innerText = "";
     operatorInput = undefined;
