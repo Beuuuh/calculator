@@ -65,6 +65,7 @@ function equalsTo() {
             multiply(firstInput, secondInput);
             break;
         case "divide":
+            evaluate();
             divide(firstInput, secondInput);
             break;
     };
@@ -91,7 +92,11 @@ function multiply(firstNumber, SecondNumber) {
 function divide(firstNumber, SecondNumber) {
     lastOperand.innerText = "";
     operatorInput = undefined;
-    return firstOperand.innerText = firstNumber / SecondNumber;
+    if(SecondNumber != 0){
+        return firstOperand.innerText = firstNumber / SecondNumber;
+    } else {
+        evaluate();
+    };
 };
 
 function clear() {
@@ -104,4 +109,11 @@ function clear() {
 
 function deleteNumber() {
     firstOperand.textContent = firstOperand.textContent.toString().slice(0,-1);
+};
+
+function evaluate() {
+    if(operatorInput == "divide" && secondInput == 0) {
+        window.alert("You can't divide by 0!");
+        clear();
+    };
 };
