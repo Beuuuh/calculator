@@ -113,7 +113,10 @@ function clear() {
 };
 
 function deleteNumber() {
-    firstOperand.textContent = firstOperand.textContent.toString().slice(0,-1);
+    firstOperand.innerText = firstOperand.textContent.toString().slice(0,-1);
+    if(firstOperand.innerText == "") {
+        firstOperand.innerText = "0";
+    }
 };
 
 function evaluate() {
