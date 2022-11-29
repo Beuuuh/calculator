@@ -20,16 +20,16 @@ operators[0].forEach((e) => {
         appendOperator(e.innerText);
         switch(e.innerText) {
             case "+":
-                operatorInput = "add";
+                operatorInput = "+";
                 break;
             case "-":
-                operatorInput = "subtraction";
+                operatorInput = "-";
                 break;
             case "*":
-                operatorInput = "multiply";
+                operatorInput = "*";
                 break;
             case "/":
-                operatorInput = "divide";
+                operatorInput = "/";
                 break;
         };
     });
@@ -49,20 +49,24 @@ function appendOperator(Button) {
     if(operatorInput != undefined) {
         firstOperand.innerText = firstOperand.textContent.toString().slice(0,-1);
     };
+    if(Button != operatorInput) {
+        firstOperand.innerText = firstOperand.textContent.toString().slice(0,-1);
+        firstOperand.innerText += Button;
+    };
 };
 
 function equalsTo() {
     switch(operatorInput) {
-        case "add":
+        case "+":
             add(firstInput, secondInput);
             break;
-        case "subtraction":
+        case "-":
             subtraction(firstInput, secondInput);
             break;
-        case "multiply":
+        case "*":
             multiply(firstInput, secondInput);
             break;
-        case "divide":
+        case "/":
             evaluate();
             divide(firstInput, secondInput);
             break;
