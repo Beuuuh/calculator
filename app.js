@@ -41,11 +41,14 @@ numbers[0].forEach((e) => {
 
 equals.addEventListener("click", () => {equalsTo()});
 cleanScreen.addEventListener("click", () => {clear()});
-dot.addEventListener("click", () => {labelChanger(".")});
+dot.addEventListener("click", () => {appendDot(".")});
 del.addEventListener("click", () => {deleteNumber()});
 
 function appendOperator(Button) {
     firstOperand.innerText += Button;
+    if(operatorInput != undefined) {
+        firstOperand.innerText = firstOperand.textContent.toString().slice(0,-1);
+    };
 };
 
 function equalsTo() {
@@ -121,11 +124,15 @@ function evaluate() {
 };
 
 function appendNumber(Button) {
-    if(firstOperand.innerText == 0) resetScreen();
+    if(firstOperand.innerText === "0") resetScreen();
     firstOperand.innerText += Button;
     firstInput = parseFloat(firstOperand.innerText);
     if(operatorInput != undefined) {
         lastOperand.innerText += Button;
         secondInput = parseFloat(lastOperand.innerText);
     };
+};
+
+function appendDot(dot) {
+    firstOperand.innerText += dot;
 };
