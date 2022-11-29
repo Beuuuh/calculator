@@ -17,7 +17,7 @@ operators.push(document.querySelectorAll([".operator"]));
 
 operators[0].forEach((e) => {
     e.addEventListener('click', () => {
-        labelChanger(e.innerText);
+        appendOperator(e.innerText);
         switch(e.innerText) {
             case "+":
                 operatorInput = "add";
@@ -36,7 +36,7 @@ operators[0].forEach((e) => {
 });
 
 numbers[0].forEach((e) => {
-    e.addEventListener('click', () => {labelChanger(e.innerText)});
+    e.addEventListener('click', () => {appendNumber(e.innerText)});
 });
 
 equals.addEventListener("click", () => {equalsTo()});
@@ -44,14 +44,8 @@ cleanScreen.addEventListener("click", () => {clear()});
 dot.addEventListener("click", () => {labelChanger(".")});
 del.addEventListener("click", () => {deleteNumber()});
 
-function labelChanger(Button) {
-    if(firstOperand.innerText == 0) resetScreen();
+function appendOperator(Button) {
     firstOperand.innerText += Button;
-    firstInput = parseFloat(firstOperand.innerText);
-    if(operatorInput != undefined) {
-        lastOperand.innerText += Button;
-        secondInput = parseFloat(lastOperand.innerText);
-    };
 };
 
 function equalsTo() {
@@ -123,5 +117,15 @@ function evaluate() {
     if(operatorInput == "divide" && secondInput == 0) {
         window.alert("You can't divide by 0!");
         clear();
+    };
+};
+
+function appendNumber(Button) {
+    if(firstOperand.innerText == 0) resetScreen();
+    firstOperand.innerText += Button;
+    firstInput = parseFloat(firstOperand.innerText);
+    if(operatorInput != undefined) {
+        lastOperand.innerText += Button;
+        secondInput = parseFloat(lastOperand.innerText);
     };
 };
