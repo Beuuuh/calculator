@@ -12,15 +12,56 @@ body {
 
 .calculator {
     background-color: rgb(051, 058, 088);
-    width: 400px;
+    width: 380px;
     padding: 5px;
 }
 
 .label {
-    font-size: 35px;
+    padding: 10px;
+    font-size: 50px;
     color: white;
     display: flex;
     justify-content: end;
+}
+
+button {
+    padding: 0px;
+    background-color: rgb(059, 063, 093);
+    font-size: 20px;
+    color: white;
+    width: 90px;
+    height: 90px;
+    margin: 2px;
+}
+
+.frstrow {
+    display: flex;
+    justify-content: center;
+}
+
+.frstrow button {
+    width: 184px;
+    height: 90px;
+}
+
+.scndrow {
+    display: flex;
+    justify-content: center;
+}
+
+.thrdrow {
+    display: flex;
+    justify-content: center;
+}
+
+.frthrow {
+    display: flex;
+    justify-content: center;
+}
+
+.fithrow {
+    display: flex;
+    justify-content: center;
 }
 
 .footer {
